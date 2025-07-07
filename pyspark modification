@@ -1,0 +1,21 @@
+# Load a CSV file into a DataFrame
+df = spark.read.option("header", True).csv("/mnt/data/customers.csv")
+
+# Preview the DataFrame
+df.display()
+
+# Clean and modify the data
+from pyspark.sql.functions import col, trim, upper, lit
+
+# Example transformations
+df_cleaned = (
+    df.withColumn("customer_name", trim(upper(col("customer_name"))))  # Clean name
+      .withColumn("is_active", lit(True))                              # Add new column
+      .filter(col("email").isNotNull())                                # Remove rows without email
+)
+
+# Show result
+df_cleaned.display()
+
+# Write the cleaned data back to a new location (Parquet format)
+df_cleaned.write.mode("overwrite").parquet("/mnt/data/cleaned_customers")
