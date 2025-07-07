@@ -1,0 +1,13 @@
+[merge]
+    tool = vscode
+
+[mergetool "vscode"]
+    cmd = /full/path/to/vscode-mergetool.sh merge_cmd
+    trustExitCode = false
+
+[diff]
+    tool = vscode
+
+[difftool "vscode"]
+    cmd = /full/path/to/vscode-mergetool.sh diff_cmd
+    trustExitCode = false
