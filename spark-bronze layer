@@ -1,0 +1,4 @@
+df_cal = spark.read.format("csv") \
+    .option("header", True) \
+    .option("inferSchema", True) \
+    .load("abfss://bronze@awstoradatalake.dfs.core.windows.net")
