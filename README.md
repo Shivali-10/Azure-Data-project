@@ -1,4 +1,4 @@
-Azure Data Engineering Project: End-to-End ETL Pipeline with ADF, Databricks, Data Lake, and Power BI
+# Azure Data Engineering Project: End-to-End ETL Pipeline with ADF, Databricks, Data Lake, and Power BI
 📌 Overview
 
 ![Azure](https://img.shields.io/badge/Azure-Data--Factory-blue?logo=microsoft-azure)
